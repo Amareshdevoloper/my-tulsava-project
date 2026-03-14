@@ -1,8 +1,13 @@
 'use client'
 
 import React, { useState } from 'react'
-import { ChevronLeft, ChevronRight } from 'lucide-react'
+import { CardSim, ChevronLeft, ChevronRight, Link } from 'lucide-react'
 import BestSellingSection from '@/_component/BestSelling/BestSellingSection'
+import { useRouter } from 'next/navigation'
+import Navbar from '@/_component/Navbar'
+import Footer from '@/_component/Footer'
+import { products, trendingProducts } from '@/_component/BestSelling/products'
+
  
 const page = () => {
   const images = [
@@ -21,21 +26,33 @@ const page = () => {
       prev === 0 ? images.length - 1 : prev - 1
     )
   }
-
+  const router=useRouter()
+  
+    
   return (
     <>
       {/* HERO SLIDER */}
+      <Navbar/>
+      
       <div className='relative h-[220px] sm:h-[350px] md:h-[450px] lg:h-[600px]'>
+        
+         
         <img
           src={images[current]}
           className='w-full h-full object-cover'
         />
-
+        
+       <button  onClick={() => router.push('/orders')}   className='rounded-full h-12 w-50 px-8 bg-[rgb(118,93,69)] text-white absolute top-120 ml-170  '>
+           Sign up
+            </button>
+            
+        
         <ChevronLeft
           onClick={prevImage}
           className="absolute left-3 top-1/2 -translate-y-1/2
                      w-9 h-9 md:w-10 md:h-10
                      bg-white/70 rounded-full cursor-pointer"
+                     
         />
 
         <ChevronRight
@@ -80,13 +97,17 @@ const page = () => {
       {/* BEST SELLING */}
       
 
-        <BestSellingSection/>
+        <BestSellingSection data={products}/>
+        <BestSellingSection data={trendingProducts}/>
+
 
         {/* Products future-ready */}
         <div className='flex flex-wrap justify-center gap-6'>
           {/* product cards will come here */}
         </div>
+
       
+      <Footer/>
     </>
   )
 }

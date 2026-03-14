@@ -1,10 +1,13 @@
  import React from 'react';
 import { Search, User, Heart, ShoppingBag } from 'lucide-react';
+import Navbar from '@/_component/Navbar';
+import Footer from '@/_component/Footer';
 
 export default function ShippingPolicy() {
   return (
     <div className="min-h-screen bg-[rgb(255,246,234)] text-[rgb(118,93,69)] font-sans">
       {/* --- Page Content --- */}
+      <Navbar/>
       <main className="max-w-4xl mx-auto px-6 py-16">
         <h1 className="text-4xl md:text-5xl font-serif text-center mb-12 text-[#826654]">
           Shipping policy 😊
@@ -70,7 +73,7 @@ export default function ShippingPolicy() {
       </main>
 
      
-                
+         <Footer/>       
             
     </div>
   );

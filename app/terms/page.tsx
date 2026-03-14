@@ -1,8 +1,11 @@
+import Footer from "@/_component/Footer";
+import Navbar from "@/_component/Navbar";
+
  export default function Page() {
   return (
     <section className="bg-[#fbf3e8] px-4 py-16">
       <div className="max-w-3xl mx-auto text-[#6b4f3f]">
-
+      <Navbar/>
         {/* Heading */}
         <h1 className="text-3xl md:text-4xl font-semibold text-center">
           Terms of service
@@ -139,6 +142,7 @@
         </p>
 
       </div>
+      <Footer/>
     </section>
   );
 }

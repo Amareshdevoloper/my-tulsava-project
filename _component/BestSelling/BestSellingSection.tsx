@@ -5,9 +5,12 @@ import { ChevronLeft, ChevronRight } from 'lucide-react'
 import ProductCard from './ProductCard'
 import { products } from './products'
 
-const BestSellingSection = () => {
+const BestSellingSection = ({data}) => {
   const sliderRef = useRef<HTMLDivElement>(null)
   const [isHovering, setIsHovering] = useState(false)
+
+
+console.log("wertyuiuhgfd",data);
 
   const scrollAmount = 300 // card width + gap
 
@@ -81,7 +84,7 @@ const BestSellingSection = () => {
         className="flex gap-8 overflow-x-scroll scroll-smooth px-10
         scrollbar-hide"
       >
-        {products.map((product) => (
+        {data.map((product) => (
           <ProductCard key={product.id} product={product} />
         ))}
       </div>

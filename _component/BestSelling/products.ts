@@ -107,3 +107,111 @@ export const products = [
   
   
 ]
+
+export const trendingProducts = [
+  {
+    id: 1,
+    title: "Elegance Stylish Coord Set with Dupatta",
+    image: "/p17.jpg",
+    price: 2299,
+    oldPrice: 2599,
+    discount: "-12%",
+    url: "https://tulsava.in",
+  },
+  {
+    id: 2,
+    title: "Mul Chanderi 3 Piece Suit",
+    image: "/p18.jpg",
+    price: 2299,
+    oldPrice: 2499,
+    discount: "-8%",
+    outOfStock: true,
+    url: "https://tulsava.in",
+  },
+  {
+    id: 3,
+    title: "Pure Cotton Ajrakh Anarkali Suit",
+    image: " /p19.jpg",
+    price: 1695,
+    oldPrice: 2499,
+    discount: "-32%",
+    url: "https://tulsava.in",
+  },
+  {
+    id: 4,
+    title: "Appliqué Work Straight Cut Suit",
+    image: " /p20.jpg",
+    price: 3299,
+    url: "https://tulsava.in",
+  },
+  {
+    id: 5,
+    title: "Style in Full Bloom Cotton Suit",
+    image: "/sale.jpg",
+    price: 1395,
+    url: "https://tulsava.in",
+  },
+  {
+    id: 6,
+    title: "Cotton Appliqué Work Suit",
+    image: "/suit.jpg",
+    price: 1899,
+    oldPrice: 2099,
+    discount: "-10%",
+    url: "https://tulsava.in",
+  },
+  {
+    id: 7,
+    title: "Elegant Cotton A-Line Suit",
+    image: "/p1.jpg",
+    price: 1395,
+    oldPrice: 1695,
+    discount: "-18%",
+    url: "https://tulsava.in",
+  },
+  {
+    id: 8,
+    title: "Mul Chanderi Designer Suit",
+    image: "/p2.jpg",
+    price: 2299,
+    oldPrice: 2599,
+    discount: "-12%",
+    url: "https://tulsava.in",
+  },
+  {
+    id: 9,
+    title: "Elegant Cotton 2 Piece Suit",
+    image: "/p3.jpg",
+    price: 1999,
+    oldPrice: 2299,
+    discount: "-11%",
+    url: "https://tulsava.in",
+  },
+  {
+    id: 10,
+    title: "Muslin Suit Set",
+    image: "/p4.jpg",
+    price: 1999,
+    oldPrice: 2199,
+    discount: "-10%",
+    url: "https://tulsava.in",
+  },
+  {
+    id: 11,
+    title: "Cotton Thread Work Suit",
+    image: "/p5.jpg",
+    price: 1895,
+    oldPrice: 2299,
+    discount: "-6%",
+    url: "https://tulsava.in",
+  },
+  {
+    id: 12,
+    title: "Pastel Mul Chanderi Suit",
+    image: "/p6.jpg",
+    price: 2499,
+    url: "https://p6.jpg",
+  }
+]
+
+

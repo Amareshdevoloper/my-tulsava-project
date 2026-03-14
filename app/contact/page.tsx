@@ -1,9 +1,12 @@
+import Footer from '@/_component/Footer'
+import Navbar from '@/_component/Navbar'
 import Link from 'next/link'
 import React from 'react'
 
 const page = () => {
   return (
     <>
+    <Navbar/>
     <div className='bg-[rgb(255,246,234)] text-[rgb(118,93,69)]  '>
         
           <h1 className='font-bold text-3xl flex justify-center items-center '>Contact Us</h1>
@@ -71,6 +74,7 @@ const page = () => {
 
 
     </div>
+    <Footer/>
     </>
   )
 }
