@@ -5,7 +5,7 @@ import { ChevronLeft, ChevronRight } from 'lucide-react'
 import ProductCard from './ProductCard'
 import { products } from './products'
 
-const BestSellingSection = ({data}) => {
+const BestSellingSection = ({data,title,subTitle}) => {
   const sliderRef = useRef<HTMLDivElement>(null)
   const [isHovering, setIsHovering] = useState(false)
 
@@ -54,8 +54,8 @@ console.log("wertyuiuhgfd",data);
 
       {/* Heading */}
       <div className="text-center mb-12">
-        <h2 className="text-3xl font-semibold">Best Selling</h2>
-        <p className="mt-2 text-sm">Top sale in this week</p>
+        <h2 className="text-3xl font-semibold">{title}</h2>
+        <p className="mt-2 text-sm"> {subTitle}</p>
       </div>
 
       {/* Left Arrow */}
