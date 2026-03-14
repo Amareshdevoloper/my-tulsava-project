@@ -97,8 +97,8 @@ const page = () => {
       {/* BEST SELLING */}
       
 
-        <BestSellingSection data={products}/>
-        <BestSellingSection data={trendingProducts}/>
+        <BestSellingSection data={products} title={"Best Selling"} subTitle={"Top sale in this week"}/>
+        <BestSellingSection data={trendingProducts} title={"Trending"} subTitle={"Top view in this 3 Days"}/>
 
 
         {/* Products future-ready */}
