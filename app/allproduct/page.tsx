@@ -1,15 +1,206 @@
-import Footer from '@/_component/Footer'
-import Navbar from '@/_component/Navbar'
-import React from 'react'
+"use client";
+import ProductCard from "@/_component/BestSelling/ProductCard";
+import { products } from "@/_component/BestSelling/products";
+import Footer from "@/_component/Footer";
+import Navbar from "@/_component/Navbar";
+import { Minus, Plus } from "lucide-react";
+import { useState } from "react";
 
-const page = () => {
+const Page = () => {
+  const [price, setPrice] = useState(3799);
+  const [open, setOpen] = useState(true);
+  const [openFeaturedProducts, setOpenFeaturedProduct] = useState(true);
+  const [priceOpen, setPriceOpen] = useState(true);
+
   return (
     <>
-    <Navbar/>
-    <div>All product page</div>
-    <Footer/>
-    </>
-  )
-}
+      <Navbar />
 
-export default page
+      {/* Product Page Header */}
+      <div className="h-30 bg-[rgb(255,246,234)]">
+        <h1 className="pt-15 text-[rgb(118,93,69)] font-bold text-3xl text-center">
+          Products
+        </h1>
+      </div>
+
+      {/* MAIN SECTION */}
+      <section className="flex bg-[rgb(255,246,234)]">
+
+        {/* SIDEBAR */}
+        <div className="w-80 text-[rgb(118,93,69)] p-8 border-r sticky top-0 bg-[rgb(255,246,234)]">
+
+          <h1 className="font-bold text-lg">Products Category</h1>
+          <hr className="mt-5 border-gray-200" />
+
+          {/* Availability */}
+          <div>
+            <div
+              className="flex justify-between mt-8 cursor-pointer"
+              onClick={() => setOpen(!open)}
+            >
+              <h2>Availability</h2>
+              {open ? <Minus /> : <Plus />}
+            </div>
+
+            <div
+              className={`overflow-hidden transition-all duration-500 ${
+                open ? "max-h-40 opacity-100 mt-4" : "max-h-0 opacity-0"
+              }`}
+            >
+              <input type="checkbox" />
+              <label className="ml-2">In stock (56)</label>
+              <br />
+
+              <input type="checkbox" />
+              <label className="ml-2">Out of stock (53)</label>
+
+              <hr className="mt-5 border-gray-200" />
+            </div>
+          </div>
+
+          {/* Price Filter */}
+          <div>
+            <div
+              className="flex justify-between mt-6 cursor-pointer"
+              onClick={() => setPriceOpen(!priceOpen)}
+            >
+              <h2>Price</h2>
+              {priceOpen ? <Minus /> : <Plus />}
+            </div>
+
+            <div
+              className={`overflow-hidden transition-all duration-500 ${
+                priceOpen ? "max-h-96 opacity-100 mt-5" : "max-h-0 opacity-0"
+              }`}
+            >
+              <div className="flex justify-center items-center gap-4">
+
+                <div className="flex items-center gap-2 border border-gray-300 pl-2">
+                  <span>₹</span>
+                  <input
+                    type="number"
+                    placeholder="0"
+                    className="w-16 outline-none"
+                  />
+                </div>
+
+                <Minus />
+
+                <div className="flex items-center gap-2 border border-gray-300 pl-2">
+                  <span>₹</span>
+                  <input
+                    type="number"
+                    placeholder="3999"
+                    className="w-16 outline-none"
+                  />
+                </div>
+
+              </div>
+
+              <div className="w-full mt-4">
+                <input
+                  type="range"
+                  min="0"
+                  max="3799"
+                  value={price}
+                  onChange={(e) => setPrice(e.target.value)}
+                  className="w-full accent-black cursor-pointer"
+                />
+
+                <p className="mt-3 text-[15px]">
+                  Price: <span className="font-semibold">Rs. 0</span> -
+                  <span className="font-semibold"> Rs. {price}</span>
+                </p>
+              </div>
+
+              <hr className="mt-5 border-gray-200" />
+            </div>
+          </div>
+
+          {/* Featured Products */}
+          <div>
+
+            <div
+              className="flex justify-between mt-8 cursor-pointer"
+              onClick={() => setOpenFeaturedProduct(!openFeaturedProducts)}
+            >
+              <h2>Featured Products</h2>
+              {openFeaturedProducts ? <Minus /> : <Plus />}
+            </div>
+
+            <div
+              className={`overflow-hidden transition-all duration-500 ${
+                openFeaturedProducts
+                  ? "max-h-[600px] opacity-100 mt-5"
+                  : "max-h-0 opacity-0"
+              }`}
+            >
+
+              {[1,2,3,].map((item)=>(
+                <div
+                key={item}
+                className="w-full p-3 border border-gray-200 rounded-xl hover:shadow-md transition duration-300 mb-4"
+                >
+
+                  <div className="flex items-center gap-4">
+
+                    <div className="w-20 h-28 overflow-hidden rounded-xl">
+                      <img
+                      src="/p4.jpg"
+                      alt="product"
+                      className="w-full h-full object-cover hover:scale-105 transition duration-300"
+                      />
+                    </div>
+
+                    <div className="flex flex-col gap-14">
+
+                      <h2 className="text-sm font-semibold leading-tight">
+                        Pure Cotton Thread <br/> Work Elegant Suit
+                      </h2>
+
+                      <div className="flex items-center gap-2">
+                        <span className="text-sm font-bold text-gray-900">
+                          ₹2,199
+                        </span>
+
+                        <span className="text-xs text-gray-400 line-through">
+                          ₹2,399
+                        </span>
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                </div>
+              ))}
+
+            </div>
+
+          </div>
+
+        </div>
+
+        {/* MAIN CONTENT */}
+        <div className="flex-1 p-10 h-screen overflow-y-auto">
+
+          <div className="grid grid-cols-4 gap-8">
+
+            {products.map((item , i)=>(
+              
+              <ProductCard product={item} />
+
+            ))}
+
+          </div>
+
+        </div>
+
+      </section>
+
+      <Footer />
+    </>
+  );
+};
+
+export default Page;
