@@ -5,8 +5,9 @@ import Navbar from "@/_component/Navbar";
   return (
     
     <section className="bg-[#fbf3e8] px-4 py-16">
+       <Navbar/>
       <div className="max-w-3xl mx-auto text-[#6b4f3f]">
-        <Navbar/>
+       
         {/* Heading */}
         <h1 className="text-3xl md:text-4xl font-semibold text-center">
           Privacy policy
@@ -127,6 +128,7 @@ import Navbar from "@/_component/Navbar";
 
       </div>
       <Footer/>
+
     </section>
     
   );

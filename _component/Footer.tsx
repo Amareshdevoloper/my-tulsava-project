@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <>
       <footer className='text-[rgb(110,80,50)] bg-[rgb(255,246,234)]
-        px-5 py-12
+         px-5 py-12
         flex flex-col md:flex-row
         justify-center md:justify-between
         items-start

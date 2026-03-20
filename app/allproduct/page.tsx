@@ -5,18 +5,24 @@ import Footer from "@/_component/Footer";
 import Navbar from "@/_component/Navbar";
 import { Minus, Plus } from "lucide-react";
 import { useState } from "react";
+import { X } from "lucide-react";
 
-const Page = () => {
+
+
+const AllProductPage = () => {
   const [price, setPrice] = useState(3799);
   const [open, setOpen] = useState(true);
   const [openFeaturedProducts, setOpenFeaturedProduct] = useState(true);
   const [priceOpen, setPriceOpen] = useState(true);
+   const [sidebarOpen, setSidebarOpen] = useState(false);
+   const [showSidebar, setShowSidebar] = useState(false);
+
 
   return (
     <>
       <Navbar />
 
-      {/* Product Page Header */}
+      {/* Product AllProduct Header */}
       <div className="h-30 bg-[rgb(255,246,234)]">
         <h1 className="pt-15 text-[rgb(118,93,69)] font-bold text-3xl text-center">
           Products
@@ -27,7 +33,30 @@ const Page = () => {
       <section className="flex bg-[rgb(255,246,234)]">
 
         {/* SIDEBAR */}
-        <div className="w-80 text-[rgb(118,93,69)] p-8 border-r sticky top-0 bg-[rgb(255,246,234)]">
+    {!showSidebar && (
+<button
+onClick={() => setShowSidebar(true)}
+className="lg:hidden fixed  ml-5 top-45 bg-[rgb(118,93,69)]  text-white px-8 py-2 rounded-md z-50 "
+>
+Filter
+</button>
+)}
+
+
+   <div className={`w-80 text-[rgb(118,93,69)] p-8 border-r bg-[rgb(255,246,234)]
+fixed lg:static top-0 left-0 h-full z-40 transition-transform duration-300
+${showSidebar ? "translate-x-0" : "-translate-x-full"} lg:translate-x-0`}>
+
+ <button
+onClick={() => setShowSidebar(false)}
+className="lg:hidden mb-4 ml-50"
+>
+<X size={28} />
+</button>
+
+
+            
+
 
           <h1 className="font-bold text-lg">Products Category</h1>
           <hr className="mt-5 border-gray-200" />
@@ -182,19 +211,18 @@ const Page = () => {
         </div>
 
         {/* MAIN CONTENT */}
-        <div className="flex-1 p-10 h-screen overflow-y-auto">
+        <div className="flex-1 pl-15 md:p-10 h-screen overflow-y-auto">
 
-          <div className="grid grid-cols-4 gap-8">
+  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-8">
 
-            {products.map((item , i)=>(
-              
-              <ProductCard product={item} />
+    {products.map((item, i) => (
+      <ProductCard key={i} product={item} />
+    ))}
 
-            ))}
+  </div>
 
-          </div>
+</div>
 
-        </div>
 
       </section>
 
@@ -203,4 +231,4 @@ const Page = () => {
   );
 };
 
-export default Page;
+export default  AllProductPage;

@@ -1,12 +1,13 @@
-import Footer from '@/_component/Footer'
-import Navbar from '@/_component/Navbar'
-import React from 'react'
+ 
+import Link from 'next/link'
+ 
+import AllProductPage from '../allproduct/page'
 
 const page = () => {
   return (
-    <>    <Navbar/>
-    <div>Best selling page</div>
-    <Footer/>
+    <>     
+      <AllProductPage/>
+     
     </>
 
   )

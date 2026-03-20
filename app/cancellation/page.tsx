@@ -1,10 +1,14 @@
 'use client'
+import Footer from '@/_component/Footer'
+import Navbar from '@/_component/Navbar'
 import React from 'react'
 
 
 const  page = () => {
   return (
-    <section className=' border p-15 text-[rgb(110,80,50)] bg-[rgb(255,246,234)]  '>
+    <section className='  p-15 text-[rgb(110,80,50)] bg-[rgb(255,246,234)]  '>
+       <Navbar/>
+    
     <div  >
         <h1 className='text-[50px] font-bold text-center'>Cancellation & Refunds</h1>
         <p>Return Eligibility</p>
@@ -64,6 +68,7 @@ const  page = () => {
 </ul>
   
  </div>
+ <Footer/>
     </section>
   )
 }

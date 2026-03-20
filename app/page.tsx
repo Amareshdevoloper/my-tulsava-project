@@ -42,9 +42,9 @@ const page = () => {
           className='w-full h-full object-cover'
         />
         
-       <button  onClick={() => router.push('/orders')}   className='rounded-full h-12 w-50 px-8 bg-[rgb(118,93,69)] text-white absolute top-120 ml-170  '>
-           Sign up
-            </button>
+       
+
+
             
         
         <ChevronLeft
