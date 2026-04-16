@@ -3,16 +3,27 @@
 import { useEffect, useRef, useState } from 'react'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 import ProductCard from './ProductCard'
-import { products } from './products'
 
-const BestSellingSection = ({data,title,subTitle}:any) => {
+// ✅ Product ka proper type
+interface Product {
+  id: number
+  name: string
+  price: number
+  image: string
+}
+
+// ✅ Props ka type
+interface BestSellingSectionProps {
+  data: Product[]
+  title: string
+  subTitle: string
+}
+
+const BestSellingSection = ({ data, title, subTitle }: BestSellingSectionProps) => {
   const sliderRef = useRef<HTMLDivElement>(null)
   const [isHovering, setIsHovering] = useState(false)
 
-
-console.log("wertyuiuhgfd",data);
-
-  const scrollAmount = 300 // card width + gap
+  const scrollAmount = 300
 
   const nextSlide = () => {
     if (!sliderRef.current) return
@@ -30,7 +41,7 @@ console.log("wertyuiuhgfd",data);
     })
   }
 
-  // AUTO SLIDE
+  // ✅ AUTO SLIDE
   useEffect(() => {
     if (isHovering) return
 
@@ -55,16 +66,16 @@ console.log("wertyuiuhgfd",data);
       {/* Heading */}
       <div className="text-center mb-12">
         <h2 className="text-3xl font-semibold">{title}</h2>
-        <p className="mt-2 text-sm"> {subTitle}</p>
+        <p className="mt-2 text-sm">{subTitle}</p>
       </div>
 
       {/* Left Arrow */}
       <button
         onClick={prevSlide}
         className="absolute left-4 top-1/2 -translate-y-1/2
-       md:bg-white p-3 rounded-full shadow z-10 bg-gray-200 opacity-50"
+        md:bg-white p-3 rounded-full shadow z-10 bg-gray-200 opacity-50"
       >
-        <ChevronLeft  />
+        <ChevronLeft />
       </button>
 
       {/* Right Arrow */}
@@ -81,10 +92,9 @@ console.log("wertyuiuhgfd",data);
         ref={sliderRef}
         onMouseEnter={() => setIsHovering(true)}
         onMouseLeave={() => setIsHovering(false)}
-        className="flex gap-8 overflow-x-scroll scroll-smooth px-10
-        scrollbar-hide"
+        className="flex gap-8 overflow-x-scroll scroll-smooth px-10 scrollbar-hide"
       >
-        {data.map((product) => (
+        {data.map((product: Product) => (
           <ProductCard key={product.id} product={product} />
         ))}
       </div>
