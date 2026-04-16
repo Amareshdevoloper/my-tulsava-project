@@ -5,7 +5,7 @@ import { ChevronLeft, ChevronRight } from 'lucide-react'
 import ProductCard from './ProductCard'
 import { products } from './products'
 
-const BestSellingSection = ({data,title,subTitle}) => {
+const BestSellingSection = ({data,title,subTitle}:any) => {
   const sliderRef = useRef<HTMLDivElement>(null)
   const [isHovering, setIsHovering] = useState(false)
 
