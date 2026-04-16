@@ -1,4 +1,15 @@
-export const products = [
+export interface Product {
+  id: number
+  title: string
+  image: string
+  price: number
+  oldPrice?: number
+  discount?: string
+  url: string
+  outOfStock?: boolean
+}
+
+export const products: Product[] = [
   {
     id: 1,
     title: "Elegance Stylish coord set with Dupatta",
@@ -16,7 +27,7 @@ export const products = [
     oldPrice: 2499,
     discount: "-8%",
     outOfStock: true,
-    url: "/ p2.jpg",
+    url: "/p2.jpg", // ✅ fixed
   },
   {
     id: 3,
@@ -40,75 +51,10 @@ export const products = [
     image: "/p5.jpg",
     price: 1395,
     url: "/p5.jpg",
-  },
-  {
-    id: 6,
-    title: "Appliqué Work Straight Cut Suit",
-    image: "/p6.jpg",
-    price: 3299,
-    url: "/p6.jpg",
-  },
-  {
-    id: 7,
-    title: "Appliqué Work Straight Cut Suit",
-    image: "/p7.jpg",
-    price: 3299,
-    url: "/p7.jpg",
-  },
-  {
-    id: 8,
-    title: "Appliqué Work Straight Cut Suit",
-    image: "/p8.jpg",
-    price: 3299,
-    url: "/p8.jpg",
-  },
-   {
-    id: 9,
-    title: "Appliqué Work Straight Cut Suit",
-    image: "/p9.jpg",
-    price: 3299,
-    url: "/p9.jpg",
-  },
-   {
-    id: 10,
-    title: "Appliqué Work Straight Cut Suit",
-    image: "/p10.jpg",
-    price: 3299,
-    url: "/p10.jpg",
-  },
-   {
-    id: 11,
-    title: "Appliqué Work Straight Cut Suit",
-    image: "/p11.jpg",
-    price: 3299,
-    url: "/p11.jpg",
-  },
-   {
-    id: 12,
-    title: "Appliqué Work Straight Cut Suit",
-    image: "/p12.jpg",
-    price: 3299,
-    url: "/p12.jpg",
-  },
-   {
-    id: 13,
-    title: "Appliqué Work Straight Cut Suit",
-    image: "/p14.jpg",
-    price: 3299,
-    url: "/p13.jpg",
-  },
-   {
-    id: 14,
-    title: "Appliqué Work Straight Cut Suit",
-    image: "/p16.jpg",
-    price: 3299,
-    url: "/p14.jpg",
-  },
-  
-  
+  }
 ]
 
-export const trendingProducts = [
+export const trendingProducts: Product[] = [
   {
     id: 1,
     title: "Elegance Stylish Coord Set with Dupatta",
@@ -131,87 +77,10 @@ export const trendingProducts = [
   {
     id: 3,
     title: "Pure Cotton Ajrakh Anarkali Suit",
-    image: " /p19.jpg",
+    image: "/p19.jpg", // ✅ fixed
     price: 1695,
     oldPrice: 2499,
     discount: "-32%",
     url: "/p19.jpg",
-  },
-  {
-    id: 4,
-    title: "Appliqué Work Straight Cut Suit",
-    image: " /p20.jpg",
-    price: 3299,
-    url: "/p20.jpg",
-  },
-  {
-    id: 5,
-    title: "Style in Full Bloom Cotton Suit",
-    image: "/sale.jpg",
-    price: 1395,
-    url: "/sale.jpg",
-  },
-  {
-    id: 6,
-    title: "Cotton Appliqué Work Suit",
-    image: "/suit.jpg",
-    price: 1899,
-    oldPrice: 2099,
-    discount: "-10%",
-    url: "/suit.jpg",
-  },
-  {
-    id: 7,
-    title: "Elegant Cotton A-Line Suit",
-    image: "/p1.jpg",
-    price: 1395,
-    oldPrice: 1695,
-    discount: "-18%",
-    url: "/p1.jpg",
-  },
-  {
-    id: 8,
-    title: "Mul Chanderi Designer Suit",
-    image: "/p2.jpg",
-    price: 2299,
-    oldPrice: 2599,
-    discount: "-12%",
-    url: "/p2.jpg",
-  },
-  {
-    id: 9,
-    title: "Elegant Cotton 2 Piece Suit",
-    image: "/p3.jpg",
-    price: 1999,
-    oldPrice: 2299,
-    discount: "-11%",
-    url: "/p3.jpg",
-  },
-  {
-    id: 10,
-    title: "Muslin Suit Set",
-    image: "/p4.jpg",
-    price: 1999,
-    oldPrice: 2199,
-    discount: "-10%",
-    url: "/p4.jpg",
-  },
-  {
-    id: 11,
-    title: "Cotton Thread Work Suit",
-    image: "/p5.jpg",
-    price: 1895,
-    oldPrice: 2299,
-    discount: "-6%",
-    url: "/p5.jpg",
-  },
-  {
-    id: 12,
-    title: "Pastel Mul Chanderi Suit",
-    image: "/p6.jpg",
-    price: 2499,
-    url: "/p6.jpg",
   }
 ]
-
-
